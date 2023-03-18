@@ -13,6 +13,7 @@ import { CadastrarComponent } from './components/colecao/cadastrar/cadastrar.com
 import { EditarComponent } from './components/colecao/editar/editar.component';
 import { ListarComponent } from './components/colecao/listar/listar.component';
 import { CadastarComponent } from './components/modelo/cadastar/cadastar.component';
+import { FullComponent } from './components/full/full.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CadastarComponent } from './components/modelo/cadastar/cadastar.compone
     CadastrarComponent,
     EditarComponent,
     ListarComponent,
-    CadastarComponent
+    CadastarComponent,
+    FullComponent
   ],
   imports: [
     BrowserModule,
