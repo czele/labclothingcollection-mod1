@@ -9,12 +9,7 @@ import { EsqueceuSenhaComponent } from './components/autenticacao/esqueceu-senha
 import { EnvioEmailComponent } from './components/autenticacao/envio-email/envio-email.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { CadastrarComponent } from './components/colecao/colecao-cadastrar/cadastrar.component';
-import { EditarComponent } from './components/colecao/colecao-editar/editar.component';
-import { ListarComponent } from './components/colecao/colecao-listar/listar.component';
-import { CadastarComponent } from './components/modelo/cadastar/cadastar.component';
 import { FullComponent } from './components/full/full.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { ColecaoCadastrarComponent } from './components/colecao/colecao-cadastrar/colecao-cadastrar.component';
 import { ColecaoEditarComponent } from './components/colecao/colecao-editar/colecao-editar.component';
 import { ColecaoListarComponent } from './components/colecao/colecao-listar/colecao-listar.component';
@@ -31,10 +26,6 @@ import { ModeloEditarComponent } from './components/modelo/modelo-editar/modelo-
     EnvioEmailComponent,
     HomeComponent,
     MenuComponent,
-    CadastrarComponent,
-    EditarComponent,
-    ListarComponent,
-    CadastarComponent,
     FullComponent,
     ColecaoCadastrarComponent,
     ColecaoEditarComponent,

@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ModeloCadastrarComponent } from './components/modelo/modelo-cadastrar/modelo-cadastrar.component';
 import { ModeloEditarComponent } from './components/modelo/modelo-editar/modelo-editar.component';
 import { ModeloListarComponent } from './components/modelo/modelo-listar/modelo-listar.component';
+import { LoginGuard } from './login.guard';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch: 'full'},
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path:'cadastro', component:CadastroComponent},
   {path:'esqueceu-senha', component: EsqueceuSenhaComponent},
   {path:'envio-email', component: EnvioEmailComponent},
-  {path:'home', component: HomeComponent,
+  {path:'home', component: HomeComponent, canActivateChild: [LoginGuard],
   children: [
     {path:'colecao', component: ColecaoListarComponent},
     {path:'colecao/cadastrar', component: ColecaoCadastrarComponent},
