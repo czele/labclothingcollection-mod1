@@ -70,28 +70,48 @@
       "nome": "Coleção 1",
       "estacao": "primavera",
       "lancamento": "2020",
-      "responsavel": "Camila"
+      "responsavel": "Camila",
+      "orcamento": 100
     },
     {
       "id": 2,
       "nome": "Coleção 2",
       "estacao": "verão",
       "lancamento": "2021",
-      "responsavel": "Maria"
+      "responsavel": "Maria",
+      "orcamento": 200
     },
     {
       "id": 3,
       "nome": "Coleção 3",
       "estacao": "outono",
       "lancamento": "2022",
-      "responsavel": "João"
+      "responsavel": "João",
+      "orcamento": 300
     },
     {
       "id": 4,
       "nome": "Coleção 4",
       "estacao": "inverno",
       "lancamento": "2023",
-      "responsavel": "Paula"
+      "responsavel": "Paula",
+      "orcamento": 400
+    },
+    {
+      "id": 5,
+      "nome": "Coleção 5",
+      "estacao": "primaveira/verão",
+      "lancamento": "2024",
+      "responsavel": "César",
+      "orcamento": 500
+    },
+    {
+      "id": 6,
+      "nome": "Coleção 6",
+      "estacao": "outono/inverno",
+      "lancamento": "2025",
+      "responsavel": "Bruna",
+      "orcamento": 600
     }
   ]
 }
