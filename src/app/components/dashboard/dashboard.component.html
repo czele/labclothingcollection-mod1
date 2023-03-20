@@ -1,1 +1,21 @@
 <p>dashboard works!</p>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Estação</th>
+        <th>Lançamento</th>
+        <th>Responsável</th>
+        <th>Orçamento</th>
+    </tr>
+    <tr *ngFor="let colecaoItem of colecaoList">
+        <td>{{ colecaoItem.id }}</td>
+        <td>{{ colecaoItem.nome }}</td>
+        <td>{{ colecaoItem.estacao }}</td>
+        <td>{{ colecaoItem.lancamento }}</td>
+        <td>{{ colecaoItem.responsavel }}</td>
+        <td>{{ colecaoItem.orcamento }}</td>
+    </tr>
+</table>
+
