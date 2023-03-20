@@ -10,16 +10,27 @@ import { ColecaoService } from 'src/app/services/colecao.service';
 export class DashboardComponent {
 
   colecaoList: Colecao[] = [];
+  tamanhoColecao: number = 0;
 
   constructor(private _service: ColecaoService) {}
 
   ngOnInit(): void {
-    this.listarColecao()
+    this.listarColecao();
   }
 
-  listarColecao = () => {
-    this._service.listar().subscribe(colecao => this.colecaoList = colecao)
+  listarColecao() {
+    this._service.listar().subscribe(colecao => {this.colecaoList = colecao; return this.ordenarOrcamento()});
   }
 
-  
+  ordenarOrcamento() {
+    this.colecaoList.sort((a,b)=>(a.orcamento>b.orcamento) ? -1 : (a.orcamento<b.orcamento) ? 1 : 0);
+  }
+
+  totalColecao() {
+    return this.colecaoList.length;
+  }
+
+  mediaOrcamento() {
+    this.colecaoList.forEach(element => {element.orcamento});
+  }
 }
