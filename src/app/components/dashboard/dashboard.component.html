@@ -11,7 +11,7 @@
         <th>Responsável</th>
         <th>Orçamento</th>
     </tr>
-    <tr *ngFor="let colecaoItem of colecaoList">
+    <tr *ngFor="let colecaoItem of colecaoList.slice(0,5)">
         <td>{{ colecaoItem.id }}</td>
         <td>{{ colecaoItem.nome }}</td>
         <td>{{ colecaoItem.estacao }}</td>

@@ -1,3 +1,20 @@
 <button routerLink="cadastrar">Cadastrar</button>
 <button routerLink="editar">Editar</button>
 <p>modelo-listar works!</p>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Coleçao</th>
+        <th>Responsável</th>
+    </tr>
+    <tr *ngFor="let modeloItem of modeloList">
+        <td>{{ modeloItem.id }}</td>
+        <td>{{ modeloItem.nome }}</td>
+        <td>{{ modeloItem.tipo }}</td>
+        <td>{{ modeloItem.colecao }}</td>
+        <td>{{ modeloItem.responsavel }}</td>
+    </tr>
+</table>

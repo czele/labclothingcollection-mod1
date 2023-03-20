@@ -10,7 +10,7 @@ import { ColecaoService } from 'src/app/services/colecao.service';
 export class DashboardComponent {
 
   colecaoList: Colecao[] = [];
-  tamanhoColecao: number = 0;
+  somaColecao: number[] = [];
 
   constructor(private _service: ColecaoService) {}
 
@@ -32,5 +32,6 @@ export class DashboardComponent {
 
   mediaOrcamento() {
     this.colecaoList.forEach(element => {element.orcamento});
+    
   }
 }

@@ -10,9 +10,9 @@ export class ColecaoService {
 
   url: string = 'http://localhost:3000/';
   
-  constructor(private _colecaoservice: HttpClient) { }
+  constructor(private _colecaoService: HttpClient) { }
 
   listar(): Observable<Colecao[]> {
-    return this._colecaoservice.get<Colecao[]>(`${this.url}colecoes`);
+    return this._colecaoService.get<Colecao[]>(`${this.url}colecoes`);
   }
 }
