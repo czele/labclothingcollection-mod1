@@ -9,6 +9,8 @@
         <th>Tipo</th>
         <th>Coleçao</th>
         <th>Responsável</th>
+        <th>Bordado</th>
+        <th>Estampa</th>
     </tr>
     <tr *ngFor="let modeloItem of modeloList">
         <td>{{ modeloItem.id }}</td>
@@ -16,5 +18,7 @@
         <td>{{ modeloItem.tipo }}</td>
         <td>{{ modeloItem.colecao }}</td>
         <td>{{ modeloItem.responsavel }}</td>
+        <td>{{ modeloItem.bordado }}</td>
+        <td>{{ modeloItem.estampa }}</td>
     </tr>
 </table>

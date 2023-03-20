@@ -13,7 +13,7 @@ export class ModeloService {
   constructor(private _modeloService: HttpClient) { }
 
   listar(): Observable<Modelo[]> {
-    return this._modeloService.get<Modelo[]>(`${this.url}colecoes`);
+    return this._modeloService.get<Modelo[]>(`${this.url}modelos`);
   }
 
 }
