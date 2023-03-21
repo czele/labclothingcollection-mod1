@@ -18,6 +18,7 @@ import { ModeloCadastrarComponent } from './components/modelo/modelo-cadastrar/m
 import { ModeloListarComponent } from './components/modelo/modelo-listar/modelo-listar.component';
 import { ModeloEditarComponent } from './components/modelo/modelo-editar/modelo-editar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

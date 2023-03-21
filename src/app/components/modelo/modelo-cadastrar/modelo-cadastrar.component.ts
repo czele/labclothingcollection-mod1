@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-modelo-cadastrar',
@@ -7,6 +8,22 @@ import { Component } from '@angular/core';
 })
 export class ModeloCadastrarComponent {
 
+  formCadastrarModelo!: FormGroup;
+
+  constructor(private formModelo: FormBuilder) {}
   
+  ngOnInit() {
+    this.formCadastrarModelo = this.formModelo.group({
+      nome: [''],
+      estacao: [''],
+      lancamento: [''],
+      responsavel: [''],
+      orcamento: ['']
+    })
+  }
+
+  onSubmit() {
+    
+  }
 
 }

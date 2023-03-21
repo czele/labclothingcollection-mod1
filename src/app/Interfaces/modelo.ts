@@ -1,5 +1,5 @@
 export interface Modelo {
-    id: number,
+    id?: number,
     nome: string,
     tipo: string,
     colecao: number,

@@ -1,3 +1,28 @@
 <button routerLink="/home/colecao">Voltar</button>
 <button routerLink="/home/colecao">Cadastrar</button>
 <p>colecao-cadastrar works!</p>
+
+<form class="form" [formGroup]="formCadastrarColecao" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Nome:</label>
+        <input placeholder="nome" formControlName="nome">
+    </div>
+    <div>
+        <label>Estação:</label>
+        <input placeholder="Estação" formControlName="estacao">
+    </div>
+    <div>
+        <label>Lançamento:</label>
+        <input placeholder="Lançamento" formControlName="lancamento">
+    </div>
+    <div>
+        <label>Responsável:</label>
+        <input placeholder="Responsável" formControlName="responsavel">
+    </div>
+    <!-- Validação de número -->
+    <div>
+        <label>Orçamento:</label>
+        <input placeholder="Orçamento" formControlName="orcamento">
+    </div>
+    <div><button type="submit">Cadastrar</button></div>
+</form>
