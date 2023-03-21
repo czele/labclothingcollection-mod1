@@ -15,7 +15,7 @@ export class ModeloCadastrarComponent {
   ngOnInit() {
     this.formCadastrarModelo = this.formModelo.group({
       nome: [''],
-      estacao: [''],
+      tipo: [''],
       lancamento: [''],
       responsavel: [''],
       orcamento: ['']
