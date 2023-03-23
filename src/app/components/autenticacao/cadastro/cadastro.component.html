@@ -1,3 +1,23 @@
 <button routerLink="/login">Voltar</button>
 <button routerLink="/login">Cadastrar</button>
 <p>cadastro works!</p>
+
+<form class="form" [formGroup]="formCadastroUsuario" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Nome:</label>
+        <input placeholder="Nome" formControlName="nome">
+    </div>
+    <div>
+        <label>Nome da Empresa:</label>
+        <input placeholder="Nome da Empresa" formControlName="nomeEmpresa">
+    </div>
+    <div>
+        <label>CNPJ:</label>
+        <input placeholder="CNPJ" formControlName="cnpj">
+    </div>
+    <div>
+        <label>E-mail:</label>
+        <input placeholder="email" formControlName="email">
+    </div>
+    <div><button type="submit">Cadastrar</button></div>
+</form>

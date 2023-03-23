@@ -30,9 +30,9 @@ export class ColecaoCadastrarComponent implements OnInit{
     const colecaoCadastrada: Colecao = this.formCadastrarColecao.value
   }
 
-  async cadastrarColecao() {
-    await this._service.cadastrar(colecaoCadastrada);
-  }
+  // async cadastrarColecao() {
+  //   await this._service.cadastrar(colecaoCadastrada);
+  // }
 
 
 }
