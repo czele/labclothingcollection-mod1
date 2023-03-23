@@ -8,11 +8,19 @@ import { Colecao } from '../Interfaces/colecao';
 })
 export class ColecaoService {
 
-  url: string = 'http://localhost:3000/';
+  url: string = 'http://localhost:3000/colecoes';
   
   constructor(private _colecaoService: HttpClient) { }
 
   listar(): Observable<Colecao[]> {
-    return this._colecaoService.get<Colecao[]>(`${this.url}colecoes`);
+    return this._colecaoService.get<Colecao[]>(`${this.url}`);
+  }
+
+  cadastrar(colecao: Colecao): Observable<Colecao> {
+    return this._colecaoService.post<Colecao>(`${this.url}`, colecao)
+  } 
+
+  excluir(id: number): Observable<any> {
+    return this._colecaoService.delete<any>(`${this.url}/${id}`)
   }
 }

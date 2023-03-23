@@ -1,3 +1,31 @@
 <button routerLink="/home/modelo">Cadastrar</button>
 <button routerLink="/home/modelo">Voltar</button>
 <p>modelo-cadastrar works!</p>
+
+<form class="form" [formGroup]="formCadastrarModelo" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Nome:</label>
+        <input placeholder="Nome" formControlName="nome">
+    </div>
+    <div>
+        <label>Tipo:</label>
+        <input placeholder="Tipo" formControlName="tipo">
+    </div>
+    <div>
+        <label>Coleção:</label>
+        <input placeholder="Coleção" formControlName="colecao">
+    </div>
+    <div>
+        <label>Responsável:</label>
+        <input placeholder="Responsável" formControlName="responsavel">
+    </div>
+    <div>
+        <label>Bordado:</label>
+        <input placeholder="Bordado" formControlName="bordado">
+    </div>
+    <div>
+        <label>Estampa:</label>
+        <input placeholder="Estampa" formControlName="estampa">
+    </div>
+    <div><button type="submit">Cadastrar</button></div>
+</form>

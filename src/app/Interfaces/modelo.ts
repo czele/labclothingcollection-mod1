@@ -4,6 +4,6 @@ export interface Modelo {
     tipo: string,
     colecao: number,
     responsavel: string,
-    bordado: string,
-    estampa: string
+    bordado: boolean,
+    estampa: boolean
 }

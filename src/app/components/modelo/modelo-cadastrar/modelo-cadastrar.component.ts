@@ -16,14 +16,15 @@ export class ModeloCadastrarComponent {
     this.formCadastrarModelo = this.formModelo.group({
       nome: [''],
       tipo: [''],
-      lancamento: [''],
+      colecao: [''],
       responsavel: [''],
-      orcamento: ['']
+      bordado: [''],
+      estampa: ['']
     })
   }
 
   onSubmit() {
-    
+    console.log(this.formCadastrarModelo)
   }
 
 }

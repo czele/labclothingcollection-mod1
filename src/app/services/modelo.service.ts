@@ -8,12 +8,20 @@ import { Modelo } from '../Interfaces/modelo';
 })
 export class ModeloService {
  
-  url: string = 'http://localhost:3000/';
+  url: string = 'http://localhost:3000/modelos';
   
   constructor(private _modeloService: HttpClient) { }
 
   listar(): Observable<Modelo[]> {
-    return this._modeloService.get<Modelo[]>(`${this.url}modelos`);
+    return this._modeloService.get<Modelo[]>(`${this.url}`);
+  }
+
+  cadastrar(modelo: Modelo): Observable<Modelo> {
+    return this._modeloService.post<Modelo>(`${this.url}`, modelo)
+  } 
+
+  excluir(id: number): Observable<any> {
+    return this._modeloService.delete<any>(`${this.url}/${id}`)
   }
 
 }
