@@ -1,5 +1,5 @@
 export interface Colecao {
-    id?: number,
+    id: number,
     nome: string,
     estacao: string,
     lancamento: string,
