@@ -20,6 +20,10 @@ export class ModeloService {
     return this._modeloService.post<Modelo>(`${this.url}`, modelo)
   } 
 
+  getId(id: string): Observable<any> {
+    return this._modeloService.get<Modelo>(`${this.url}/${id}`)
+  }
+
   excluir(id: number): Observable<any> {
     return this._modeloService.delete<any>(`${this.url}/${id}`)
   }

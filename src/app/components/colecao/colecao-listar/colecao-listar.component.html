@@ -9,7 +9,7 @@
         <th>Responsável</th>
         <th>Orçamento</th>
     </tr>
-    <tr *ngFor="let colecaoItem of colecaoList.slice(0,5)">
+    <tr *ngFor="let colecaoItem of colecaoList" (click)="editarColecao(colecaoItem.id)">
         <td>{{ colecaoItem.nome }}</td>
         <td>{{ colecaoItem.estacao }}</td>
         <td>{{ colecaoItem.lancamento }}</td>

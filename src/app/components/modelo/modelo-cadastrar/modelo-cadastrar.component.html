@@ -27,5 +27,9 @@
         <label>Estampa:</label>
         <input placeholder="Estampa" formControlName="estampa">
     </div>
-    <div><button type="submit">Cadastrar</button></div>
+    <div>
+        <button type="submit" *ngIf="!id">Cadastrar</button>
+        <button type="submit" *ngIf="id">Editar</button>
+        <button *ngIf="id">Deletar</button>
+    </div>
 </form>

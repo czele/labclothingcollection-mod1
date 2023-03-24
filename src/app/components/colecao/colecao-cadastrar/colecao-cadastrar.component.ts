@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ColecaoService } from 'src/app/services/colecao.service';
 
 @Component({
@@ -10,9 +11,11 @@ import { ColecaoService } from 'src/app/services/colecao.service';
 export class ColecaoCadastrarComponent implements OnInit{
 
   formCadastrarColecao!: FormGroup;
+  id: number = Number(this.route.snapshot.paramMap.get('id'));
 
   constructor(private formColecao: FormBuilder,
-    private _service: ColecaoService) {}
+    private _service: ColecaoService,
+    private route: ActivatedRoute) {}
   
   ngOnInit() {
     this.formCadastrarColecao = this.formColecao.group({

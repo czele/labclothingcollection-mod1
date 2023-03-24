@@ -11,7 +11,7 @@
         <th>Bordado</th>
         <th>Estampa</th>
     </tr>
-    <tr *ngFor="let modeloItem of modeloList">
+    <tr *ngFor="let modeloItem of modeloList" (click)="editarModelo(modeloItem.id)">
         <td>{{ modeloItem.nome }}</td>
         <td>{{ modeloItem.tipo }}</td>
         <td>{{ modeloItem.colecao }}</td>
