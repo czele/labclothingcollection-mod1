@@ -130,5 +130,25 @@
       "orcamento": "67876465",
       "id": 7
     }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Admin",
+      "nomeEmpresa": "Admin",
+      "CNPJ": "123456789102",
+      "email": "admin@admin.com",
+      "senha": "123",
+      "confirmarSenha": "123"
+    },
+    {
+      "nome": "asdfas",
+      "nomeEmpresa": "asdfasd",
+      "cnpj": "56188517814571817",
+      "email": "lala@lala.com",
+      "senha": "1234",
+      "confirmarSenha": "1234",
+      "id": 2
+    }
   ]
 }

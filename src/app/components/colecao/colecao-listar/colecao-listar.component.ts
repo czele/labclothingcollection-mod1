@@ -14,10 +14,11 @@ export class ColecaoListarComponent {
   constructor(private _service: ColecaoService) {}
 
   ngOnInit(): void {
-    this.listarColecao()
+    this.listarColecao();
   }
 
-  listarColecao = () => {
-    this._service.listar().subscribe(colecao => this.colecaoList = colecao)
+  listarColecao() {
+    this._service.listar().subscribe(colecao => {this.colecaoList = colecao});
   }
-} 
+
+}

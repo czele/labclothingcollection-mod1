@@ -12,11 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { FullComponent } from './components/full/full.component';
 import { ColecaoCadastrarComponent } from './components/colecao/colecao-cadastrar/colecao-cadastrar.component';
-import { ColecaoEditarComponent } from './components/colecao/colecao-editar/colecao-editar.component';
 import { ColecaoListarComponent } from './components/colecao/colecao-listar/colecao-listar.component';
 import { ModeloCadastrarComponent } from './components/modelo/modelo-cadastrar/modelo-cadastrar.component';
 import { ModeloListarComponent } from './components/modelo/modelo-listar/modelo-listar.component';
-import { ModeloEditarComponent } from './components/modelo/modelo-editar/modelo-editar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -31,11 +29,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     FullComponent,
     ColecaoCadastrarComponent,
-    ColecaoEditarComponent,
     ColecaoListarComponent,
     ModeloCadastrarComponent,
     ModeloListarComponent,
-    ModeloEditarComponent,
     DashboardComponent
   ],
   imports: [
