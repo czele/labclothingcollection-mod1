@@ -2,10 +2,9 @@
 
 <p>Total Coleção: {{ totalColecao }}</p>
 <p>Total Modelo: {{ totalModelo }}</p>
-<p>Média Orçamento: {{ mediaOrc }}</p>
+<p>Média Orçamento: {{ mediaOrc }}.slice(0,2)</p>
 <table>
     <tr>
-        <th>Id</th>
         <th>Nome</th>
         <th>Estação</th>
         <th>Lançamento</th>
@@ -13,7 +12,6 @@
         <th>Orçamento</th>
     </tr>
     <tr *ngFor="let colecaoItem of colecaoList.slice(0,5)">
-        <td>{{ colecaoItem.id }}</td>
         <td>{{ colecaoItem.nome }}</td>
         <td>{{ colecaoItem.estacao }}</td>
         <td>{{ colecaoItem.lancamento }}</td>
