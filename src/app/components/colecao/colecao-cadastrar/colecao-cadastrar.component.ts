@@ -26,7 +26,7 @@ export class ColecaoCadastrarComponent implements OnInit{
 
   onSubmit() {
     if(this.formCadastrarColecao.valid) {
-      this._service.cadastrar(this.formCadastrarColecao.value)
+      this._service.cadastrar(this.formCadastrarColecao.value).subscribe();
     }
   }
 
