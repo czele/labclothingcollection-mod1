@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModeloService } from 'src/app/services/modelo.service';
 
 @Component({
   selector: 'app-modelo-cadastrar',
@@ -10,21 +11,24 @@ export class ModeloCadastrarComponent {
 
   formCadastrarModelo!: FormGroup;
 
-  constructor(private formModelo: FormBuilder) {}
+  constructor(private formModelo: FormBuilder,
+    private _service: ModeloService) {}
   
   ngOnInit() {
     this.formCadastrarModelo = this.formModelo.group({
-      nome: [''],
-      tipo: [''],
-      colecao: [''],
-      responsavel: [''],
-      bordado: [''],
-      estampa: ['']
+      nome: ['', [Validators.required]],
+      tipo: ['', [Validators.required]],
+      colecao: ['', [Validators.required]],
+      responsavel: ['', [Validators.required]],
+      bordado: ['', [Validators.required]],
+      estampa: ['', [Validators.required]],
     })
   }
 
   onSubmit() {
-    console.log(this.formCadastrarModelo)
+    if(this.formCadastrarModelo.valid) {
+      this._service.cadastrar(this.formCadastrarModelo.value).subscribe();
+    }
   }
 
 }
