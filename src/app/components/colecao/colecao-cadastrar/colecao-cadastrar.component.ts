@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ColecaoService } from 'src/app/services/colecao.service';
 
 @Component({
@@ -15,7 +15,8 @@ export class ColecaoCadastrarComponent implements OnInit{
 
   constructor(private formColecao: FormBuilder,
     private _service: ColecaoService,
-    private route: ActivatedRoute) {}
+    private route: ActivatedRoute,
+    private navegar: Router) {}
   
   ngOnInit() {
     this.formCadastrarColecao = this.formColecao.group({
@@ -29,8 +30,18 @@ export class ColecaoCadastrarComponent implements OnInit{
 
   onSubmit() {
     if(this.formCadastrarColecao.valid) {
-      this._service.cadastrar(this.formCadastrarColecao.value).subscribe();
+      this._service.cadastrar(this.formCadastrarColecao.value).subscribe(() => this.voltar());
     }
   }
 
+  excluirColecao(id: number) {
+    this._service.excluir(id).subscribe(item => this.voltar());
+  }
+
+  voltar() {
+    // if(this.formCadastrarColecao.valid) {
+    //   this.navegar.navigateByUrl("/home/colecao")
+    // }
+    this.navegar.navigateByUrl("/home/colecao")
+  }
 }

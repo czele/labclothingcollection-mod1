@@ -62,15 +62,6 @@
       "responsavel": "Elisabete",
       "bordado": "não",
       "estampa": "não"
-    },
-    {
-      "nome": "23423",
-      "tipo": "",
-      "colecao": "",
-      "responsavel": "",
-      "bordado": "",
-      "estampa": "",
-      "id": 8
     }
   ],
   "colecoes": [
@@ -107,36 +98,12 @@
       "orcamento": 400
     },
     {
-      "id": 5,
       "nome": "Coleção 5",
-      "estacao": "primaveira/verão",
-      "lancamento": "2024",
-      "responsavel": "César",
-      "orcamento": 500
-    },
-    {
-      "id": 6,
-      "nome": "Coleção 6",
       "estacao": "outono/inverno",
-      "lancamento": "2025",
-      "responsavel": "Bruna",
-      "orcamento": 600
-    },
-    {
-      "nome": "1",
-      "estacao": "2",
-      "lancamento": "3",
-      "responsavel": "4",
-      "orcamento": "67876465",
-      "id": 7
-    },
-    {
-      "nome": "a",
-      "estacao": "a",
-      "lancamento": "a",
-      "responsavel": "a",
-      "orcamento": 5145818,
-      "id": 8
+      "lancamento": "2020",
+      "responsavel": "Aurika",
+      "orcamento": 2358,
+      "id": 5
     }
   ],
   "usuarios": [

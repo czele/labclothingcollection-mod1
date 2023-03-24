@@ -35,10 +35,15 @@ export class ModeloCadastrarComponent {
     }
   }
 
+  excluirModelo(id: number) {
+    this._service.excluir(id).subscribe(item => this.voltar());
+  }
+
   voltar() {
-    if(this.formCadastrarModelo.valid) {
-      this.navegar.navigateByUrl("/home/modelo")
-    }
+    // if(this.formCadastrarColecao.valid) {
+    //   this.navegar.navigateByUrl("/home/colecao")
+    // }
+    this.navegar.navigateByUrl("/home/modelo")
   }
 
 }

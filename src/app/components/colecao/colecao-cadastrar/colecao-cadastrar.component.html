@@ -24,6 +24,6 @@
     <div>
         <button type="submit" *ngIf="!id">Cadastrar</button>
         <button type="submit" *ngIf="id">Editar</button>
-        <button *ngIf="id">Deletar</button>
+        <button *ngIf="id" (click)="excluirColecao(id)">Deletar</button>
     </div>
 </form>
