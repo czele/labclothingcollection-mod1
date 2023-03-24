@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ModeloService } from 'src/app/services/modelo.service';
 
 @Component({
@@ -15,7 +15,8 @@ export class ModeloCadastrarComponent {
 
   constructor(private formModelo: FormBuilder,
     private _service: ModeloService,
-    private route: ActivatedRoute) {}
+    private route: ActivatedRoute,
+    private navegar: Router) {}
   
   ngOnInit() {
     this.formCadastrarModelo = this.formModelo.group({
@@ -31,6 +32,12 @@ export class ModeloCadastrarComponent {
   onSubmit() {
     if(this.formCadastrarModelo.valid) {
       this._service.cadastrar(this.formCadastrarModelo.value).subscribe();
+    }
+  }
+
+  voltar() {
+    if(this.formCadastrarModelo.valid) {
+      this.navegar.navigateByUrl("/home/modelo")
     }
   }
 

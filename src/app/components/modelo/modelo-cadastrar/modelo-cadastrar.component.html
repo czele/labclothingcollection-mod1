@@ -1,4 +1,3 @@
-<button routerLink="/home/modelo">Cadastrar</button>
 <button routerLink="/home/modelo">Voltar</button>
 <p>modelo-cadastrar works!</p>
 
@@ -28,7 +27,7 @@
         <input placeholder="Estampa" formControlName="estampa">
     </div>
     <div>
-        <button type="submit" *ngIf="!id">Cadastrar</button>
+        <button type="submit" *ngIf="!id" (click)="voltar()">Cadastrar</button>
         <button type="submit" *ngIf="id">Editar</button>
         <button *ngIf="id">Deletar</button>
     </div>
