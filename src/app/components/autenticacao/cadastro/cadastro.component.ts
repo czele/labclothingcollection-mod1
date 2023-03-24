@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro',
@@ -16,12 +16,14 @@ export class CadastroComponent {
     this.formCadastroUsuario = this.formUsuario.group({
       nome: [''],
       nomeEmpresa: [''],
-      // CNPJ: [''], Validators.minLength(14)
+      CNPJ: ['', [Validators.required, Validators.minLength(14), Validators.pattern('^[0-9]+$')]],
       email: [''],
     })
   }
 
   onSubmit() {
-    
+    if(this.formCadastroUsuario.valid){
+      console.log(this.formCadastroUsuario);
+    }
   }
 }
