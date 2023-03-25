@@ -20,6 +20,7 @@ export class ModeloCadastrarComponent {
   
   ngOnInit() {
     this.formCadastrarModelo = this.formModelo.group({
+      id: [''],
       nome: ['', [Validators.required]],
       tipo: ['', [Validators.required]],
       colecao: ['', [Validators.required]],
@@ -30,10 +31,13 @@ export class ModeloCadastrarComponent {
 
     if(this.id) {
       this._service.listarUm(this.id).subscribe(modelo =>{
+        this.formCadastrarModelo.get("id")?.setValue(modelo.id);
         this.formCadastrarModelo.get("nome")?.setValue(modelo.nome);
         this.formCadastrarModelo.get("tipo")?.setValue(modelo.tipo);
         this.formCadastrarModelo.get("colecao")?.setValue(modelo.colecao);
         this.formCadastrarModelo.get("responsavel")?.setValue(modelo.responsavel);
+        this.formCadastrarModelo.get("bordado")?.setValue(modelo.bordado);
+        this.formCadastrarModelo.get("estampa")?.setValue(modelo.estampa);
       })
     }
   }
@@ -53,7 +57,7 @@ export class ModeloCadastrarComponent {
 
   voltar() {
     if(this.formCadastrarModelo.valid) {
-      this.navegar.navigateByUrl("/home/colecao")
+      this.navegar.navigateByUrl("/home/modelo")
     }
   }
 }

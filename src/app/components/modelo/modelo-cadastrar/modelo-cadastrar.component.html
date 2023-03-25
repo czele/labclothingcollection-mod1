@@ -1,7 +1,7 @@
 <button routerLink="/home/modelo">Voltar</button>
 <p>modelo-cadastrar works!</p>
 
-<form class="form" [formGroup]="formCadastrarModelo" (ngSubmit)="onSubmit()">
+<form class="form" [formGroup]="formCadastrarModelo">
     <div>
         <label>Nome:</label>
         <input placeholder="Nome" formControlName="nome">
@@ -27,8 +27,8 @@
         <input placeholder="Estampa" formControlName="estampa">
     </div>
     <div>
-        <button type="submit" *ngIf="!id">Cadastrar</button>
-        <button type="submit" *ngIf="id">Editar</button>
+        <button (click)="onSubmit()" *ngIf="!id">Cadastrar</button>
+        <button (click)="onSubmit()" *ngIf="id">Editar</button>
         <button *ngIf="id" (click)="excluirModelo(id)">Deletar</button>
     </div>
 </form>

@@ -28,15 +28,6 @@
       "estampa": "sim"
     },
     {
-      "id": 4,
-      "nome": "Modelo 4",
-      "tipo": "boné",
-      "colecao": 3,
-      "responsavel": "Carla",
-      "bordado": "não",
-      "estampa": "não"
-    },
-    {
       "id": 5,
       "nome": "Modelo 5",
       "tipo": "calça",
@@ -44,24 +35,6 @@
       "responsavel": "Frederico",
       "bordado": "sim",
       "estampa": "sim"
-    },
-    {
-      "id": 6,
-      "nome": "Modelo 6",
-      "tipo": "caçados",
-      "colecao": 1,
-      "responsavel": "Aurika",
-      "bordado": "sim",
-      "estampa": "não"
-    },
-    {
-      "id": 7,
-      "nome": "Modelo 7",
-      "tipo": "camisa",
-      "colecao": 2,
-      "responsavel": "Elisabete",
-      "bordado": "não",
-      "estampa": "não"
     }
   ],
   "colecoes": [
@@ -79,7 +52,8 @@
       "estacao": "verão",
       "lancamento": "2021",
       "responsavel": "Maria",
-      "orcamento": 200
+      "marca": "Keds",
+      "orcamento": 400
     },
     {
       "id": 3,
@@ -92,18 +66,19 @@
     {
       "id": 4,
       "nome": "Coleção 4",
-      "estacao": "inverno",
+      "estacao": "outono/inverno",
       "lancamento": "2023",
       "responsavel": "Paula",
+      "marca": "Kouda",
       "orcamento": 400
     },
     {
+      "id": 5,
       "nome": "Coleção 5",
       "estacao": "outono/inverno",
       "lancamento": "2020",
       "responsavel": "Aurika",
-      "orcamento": 2358,
-      "id": 5
+      "orcamento": 500
     },
     {
       "id": 6,
