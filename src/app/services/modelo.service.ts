@@ -20,7 +20,7 @@ export class ModeloService {
     return this._modeloService.post<Modelo>(`${this.url}`, modelo)
   } 
 
-  getId(id: string): Observable<any> {
+  listarUm(id: number): Observable<any> {
     return this._modeloService.get<Modelo>(`${this.url}/${id}`)
   }
 

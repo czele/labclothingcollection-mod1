@@ -19,14 +19,24 @@ export class ModeloCadastrarComponent {
     private navegar: Router) {}
   
   ngOnInit() {
-    this.formCadastrarModelo = this.formModelo.group({
-      nome: ['', [Validators.required]],
-      tipo: ['', [Validators.required]],
-      colecao: ['', [Validators.required]],
-      responsavel: ['', [Validators.required]],
-      bordado: ['', [Validators.required]],
-      estampa: ['', [Validators.required]],
-    })
+    if(this.id) {
+      this._service.listarUm(this.id).subscribe(modelo =>{
+        this.formCadastrarModelo.get("nome")?.setValue(modelo.nome);
+        this.formCadastrarModelo.get("tipo")?.setValue(modelo.tipo);
+        this.formCadastrarModelo.get("colecao")?.setValue(modelo.colecao);
+        this.formCadastrarModelo.get("responsavel")?.setValue(modelo.responsavel);
+      })
+    }
+    else {
+      this.formCadastrarModelo = this.formModelo.group({
+        nome: ['', [Validators.required]],
+        tipo: ['', [Validators.required]],
+        colecao: ['', [Validators.required]],
+        responsavel: ['', [Validators.required]],
+        bordado: ['', [Validators.required]],
+        estampa: ['', [Validators.required]],
+      })
+    }
   }
 
   onSubmit() {

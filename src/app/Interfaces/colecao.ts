@@ -4,5 +4,6 @@ export interface Colecao {
     estacao: string,
     lancamento: string,
     responsavel: string,
+    marca: string,
     orcamento: number
 }

@@ -20,7 +20,7 @@ export class ColecaoService {
     return this._colecaoService.post<Colecao>(`${this.url}`, colecao)
   } 
 
-  getId(id: string): Observable<any> {
+  listarUm(id: number): Observable<any> {
     return this._colecaoService.get<Colecao>(`${this.url}/${id}`)
   }
 

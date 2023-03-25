@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Colecao } from 'src/app/Interfaces/colecao';
-import { Modelo } from 'src/app/Interfaces/modelo';
 import { ColecaoService } from 'src/app/services/colecao.service';
 import { ModeloService } from 'src/app/services/modelo.service';
 

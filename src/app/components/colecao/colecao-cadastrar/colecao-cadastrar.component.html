@@ -18,11 +18,15 @@
         <input placeholder="Responsável" formControlName="responsavel">
     </div>
     <div>
+        <label>Marca:</label>
+        <input placeholder="Marca" formControlName="marca">
+    </div>
+    <div>
         <label>Orçamento:</label>
         <input placeholder="Orçamento" type="number" formControlName="orcamento">
     </div>
     <div>
-        <button type="submit" *ngIf="!id">Cadastrar</button>
+        <button type="submit" *ngIf="!id">Criar</button>
         <button type="submit" *ngIf="id">Editar</button>
         <button *ngIf="id" (click)="excluirColecao(id)">Deletar</button>
     </div>

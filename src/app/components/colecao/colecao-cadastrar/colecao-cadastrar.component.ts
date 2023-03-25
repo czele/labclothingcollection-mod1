@@ -19,13 +19,26 @@ export class ColecaoCadastrarComponent implements OnInit{
     private navegar: Router) {}
   
   ngOnInit() {
-    this.formCadastrarColecao = this.formColecao.group({
-      nome: ['', [Validators.required]],
-      estacao: ['', [Validators.required]],
-      lancamento: ['', [Validators.required]],
-      responsavel: ['', [Validators.required]],
-      orcamento: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
-    })
+    if(this.id) {
+      this._service.listarUm(this.id).subscribe(colecao =>{
+        this.formCadastrarColecao.get("nome")?.setValue(colecao.nome);
+        this.formCadastrarColecao.get("estacao")?.setValue(colecao.estacao);
+        this.formCadastrarColecao.get("lancamento")?.setValue(colecao.lancamento);
+        this.formCadastrarColecao.get("responsavel")?.setValue(colecao.responsavel);
+        this.formCadastrarColecao.get("marca")?.setValue(colecao.marca);
+        this.formCadastrarColecao.get("orcamento")?.setValue(colecao.orcamento);
+      })
+    }
+    else {
+      this.formCadastrarColecao = this.formColecao.group({
+        nome: ['', [Validators.required]],
+        estacao: ['', [Validators.required]],
+        lancamento: ['', [Validators.required]],
+        responsavel: ['', [Validators.required]],
+        marca: ['', [Validators.required]],
+        orcamento: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+      })
+    }
   }
 
   onSubmit() {
