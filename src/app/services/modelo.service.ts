@@ -24,6 +24,10 @@ export class ModeloService {
     return this._modeloService.get<Modelo>(`${this.url}/${id}`)
   }
 
+  editar(modelo: Modelo): Observable<Modelo> {
+    return this._modeloService.put<Modelo>(`${this.url}/${modelo.id}`, modelo);
+  }
+
   excluir(id: number): Observable<any> {
     return this._modeloService.delete<any>(`${this.url}/${id}`)
   }

@@ -19,6 +19,15 @@ export class ModeloCadastrarComponent {
     private navegar: Router) {}
   
   ngOnInit() {
+    this.formCadastrarModelo = this.formModelo.group({
+      nome: ['', [Validators.required]],
+      tipo: ['', [Validators.required]],
+      colecao: ['', [Validators.required]],
+      responsavel: ['', [Validators.required]],
+      bordado: ['', [Validators.required]],
+      estampa: ['', [Validators.required]],
+    })
+
     if(this.id) {
       this._service.listarUm(this.id).subscribe(modelo =>{
         this.formCadastrarModelo.get("nome")?.setValue(modelo.nome);
@@ -27,20 +36,13 @@ export class ModeloCadastrarComponent {
         this.formCadastrarModelo.get("responsavel")?.setValue(modelo.responsavel);
       })
     }
-    else {
-      this.formCadastrarModelo = this.formModelo.group({
-        nome: ['', [Validators.required]],
-        tipo: ['', [Validators.required]],
-        colecao: ['', [Validators.required]],
-        responsavel: ['', [Validators.required]],
-        bordado: ['', [Validators.required]],
-        estampa: ['', [Validators.required]],
-      })
-    }
   }
 
   onSubmit() {
-    if(this.formCadastrarModelo.valid) {
+    if(this.id) {
+      this._service.editar(this.formCadastrarModelo.value).subscribe(() => this.voltar());
+    }
+    else {
       this._service.cadastrar(this.formCadastrarModelo.value).subscribe();
     }
   }
@@ -50,10 +52,8 @@ export class ModeloCadastrarComponent {
   }
 
   voltar() {
-    // if(this.formCadastrarColecao.valid) {
-    //   this.navegar.navigateByUrl("/home/colecao")
-    // }
-    this.navegar.navigateByUrl("/home/modelo")
+    if(this.formCadastrarModelo.valid) {
+      this.navegar.navigateByUrl("/home/colecao")
+    }
   }
-
 }

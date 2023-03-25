@@ -104,6 +104,24 @@
       "responsavel": "Aurika",
       "orcamento": 2358,
       "id": 5
+    },
+    {
+      "id": 6,
+      "nome": "Coleção 6",
+      "estacao": "inverno",
+      "lancamento": "2023",
+      "responsavel": "Cristina",
+      "marca": "Nike",
+      "orcamento": 5585
+    },
+    {
+      "id": 7,
+      "nome": "Coleçao 7",
+      "estacao": "verão",
+      "lancamento": "2020",
+      "responsavel": "Nancy",
+      "marca": "Xiaomi",
+      "orcamento": 700
     }
   ],
   "usuarios": [

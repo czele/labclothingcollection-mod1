@@ -19,8 +19,19 @@ export class ColecaoCadastrarComponent implements OnInit{
     private navegar: Router) {}
   
   ngOnInit() {
+    this.formCadastrarColecao = this.formColecao.group({
+      id: [''],
+      nome: ['', [Validators.required]],
+      estacao: ['', [Validators.required]],
+      lancamento: ['', [Validators.required]],
+      responsavel: ['', [Validators.required]],
+      marca: ['', [Validators.required]],
+      orcamento: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+    })
+
     if(this.id) {
       this._service.listarUm(this.id).subscribe(colecao =>{
+        this.formCadastrarColecao.get("id")?.setValue(colecao.id);
         this.formCadastrarColecao.get("nome")?.setValue(colecao.nome);
         this.formCadastrarColecao.get("estacao")?.setValue(colecao.estacao);
         this.formCadastrarColecao.get("lancamento")?.setValue(colecao.lancamento);
@@ -29,21 +40,16 @@ export class ColecaoCadastrarComponent implements OnInit{
         this.formCadastrarColecao.get("orcamento")?.setValue(colecao.orcamento);
       })
     }
-    else {
-      this.formCadastrarColecao = this.formColecao.group({
-        nome: ['', [Validators.required]],
-        estacao: ['', [Validators.required]],
-        lancamento: ['', [Validators.required]],
-        responsavel: ['', [Validators.required]],
-        marca: ['', [Validators.required]],
-        orcamento: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
-      })
-    }
   }
 
   onSubmit() {
-    if(this.formCadastrarColecao.valid) {
-      this._service.cadastrar(this.formCadastrarColecao.value).subscribe(() => this.voltar());
+    if(this.id) {
+      this._service.editar(this.formCadastrarColecao.value).subscribe(() => this.voltar());  
+    }
+    else {
+      if(this.formCadastrarColecao.valid) {
+        this._service.cadastrar(this.formCadastrarColecao.value).subscribe(() => this.voltar());
+      }
     }
   }
 
@@ -52,9 +58,8 @@ export class ColecaoCadastrarComponent implements OnInit{
   }
 
   voltar() {
-    // if(this.formCadastrarColecao.valid) {
-    //   this.navegar.navigateByUrl("/home/colecao")
-    // }
-    this.navegar.navigateByUrl("/home/colecao")
+    if(this.formCadastrarColecao.valid) {
+      this.navegar.navigateByUrl("/home/colecao")
+    }
   }
 }

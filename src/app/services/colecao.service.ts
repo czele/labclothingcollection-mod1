@@ -24,6 +24,10 @@ export class ColecaoService {
     return this._colecaoService.get<Colecao>(`${this.url}/${id}`)
   }
 
+  editar(colecao: Colecao): Observable<Colecao> {
+    return this._colecaoService.put<Colecao>(`${this.url}/${colecao.id}`, colecao);
+  }
+
   excluir(id: number): Observable<any> {
     return this._colecaoService.delete<any>(`${this.url}/${id}`)
   }

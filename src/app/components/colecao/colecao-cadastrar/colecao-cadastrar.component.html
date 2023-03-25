@@ -1,6 +1,6 @@
 <button routerLink="/home/colecao">Voltar</button>
 
-<form class="form" [formGroup]="formCadastrarColecao" (ngSubmit)="onSubmit()">
+<form class="form" [formGroup]="formCadastrarColecao">
     <div>
         <label>Nome:</label>
         <input placeholder="Nome" formControlName="nome">
@@ -26,8 +26,8 @@
         <input placeholder="Orçamento" type="number" formControlName="orcamento">
     </div>
     <div>
-        <button type="submit" *ngIf="!id">Criar</button>
-        <button type="submit" *ngIf="id">Editar</button>
+        <button (click)="onSubmit()" *ngIf="!id">Criar</button>
+        <button (click)="onSubmit()" *ngIf="id">Editar</button>
         <button *ngIf="id" (click)="excluirColecao(id)">Deletar</button>
     </div>
 </form>
