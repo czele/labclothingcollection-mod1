@@ -4,19 +4,15 @@
 
 <table>
     <tr>
+        <th>ModeloId</th>
         <th>Nome</th>
-        <th>Tipo</th>
-        <th>Coleçao</th>
         <th>Responsável</th>
-        <th>Bordado</th>
-        <th>Estampa</th>
+        <th>Coleçao</th>
     </tr>
     <tr *ngFor="let modeloItem of modeloList" (click)="editarModelo(modeloItem.id)">
+        <td>{{ modeloItem.id }}</td>
         <td>{{ modeloItem.nome }}</td>
-        <td>{{ modeloItem.tipo }}</td>
-        <td>{{ modeloItem.colecao }}</td>
         <td>{{ modeloItem.responsavel }}</td>
-        <td>{{ modeloItem.bordado }}</td>
-        <td>{{ modeloItem.estampa }}</td>
+        <td>{{ modeloItem.colecao }}</td>
     </tr>
 </table>

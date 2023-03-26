@@ -15,8 +15,8 @@ export class ModeloListarComponent {
   constructor(private _service: ModeloService,
     private route: Router) {}
 
-  ngOnInit(): void {
-    this.listarModelo()
+  async ngOnInit() {
+    await this.listarModelo()
   }
 
   listarModelo = () => {

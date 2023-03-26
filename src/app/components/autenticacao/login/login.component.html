@@ -1,4 +1,11 @@
 <button routerLink="/cadastro">Cadastrar</button>
 <button routerLink="/esqueceu-senha">Esqueci</button>
 <button routerLink="/home">Entrar</button>
-<p>login works!</p>
+
+<form class="form" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <label>E-mail:</label>
+    <input formControlName="email">
+    <label>Senha</label>
+    <input formControlName="senha">
+    <button type="submit">Entrar</button>
+</form>

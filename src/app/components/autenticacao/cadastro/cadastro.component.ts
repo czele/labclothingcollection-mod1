@@ -20,7 +20,7 @@ export class CadastroComponent {
       nomeEmpresa: ['', [Validators.required],],
       cnpj: ['', [Validators.required, Validators.minLength(14), Validators.pattern('^[0-9]+$')]],
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required]],
+      senha: ['', [Validators.required, Validators.minLength(8)]],
       confirmarSenha: ['', [Validators.required]],
     })
   }

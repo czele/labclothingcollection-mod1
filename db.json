@@ -101,22 +101,13 @@
   ],
   "usuarios": [
     {
-      "id": 1,
       "nome": "Admin",
       "nomeEmpresa": "Admin",
-      "CNPJ": "123456789102",
+      "cnpj": "123456789302010",
       "email": "admin@admin.com",
-      "senha": "123",
-      "confirmarSenha": "123"
-    },
-    {
-      "nome": "asdfas",
-      "nomeEmpresa": "asdfasd",
-      "cnpj": "56188517814571817",
-      "email": "lala@lala.com",
-      "senha": "1234",
-      "confirmarSenha": "1234",
-      "id": 2
+      "senha": "123456789",
+      "confirmarSenha": "123456789",
+      "id": 1
     }
   ]
 }

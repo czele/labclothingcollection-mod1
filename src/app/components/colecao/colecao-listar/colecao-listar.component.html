@@ -5,13 +5,15 @@
         <th>Lançamento</th>
         <th>Responsável</th>
         <th>Orçamento</th>
+        <th>Quantidade de Modelos</th>
     </tr>
-    <tr *ngFor="let colecaoItem of colecaoList" (click)="editarColecao(colecaoItem.id)">
+    <tr *ngFor="let colecaoItem of colecaoList; index as i" (click)="editarColecao(colecaoItem.id)">
         <td>{{ colecaoItem.nome }}</td>
         <td>{{ colecaoItem.estacao }}</td>
         <td>{{ colecaoItem.lancamento }}</td>
         <td>{{ colecaoItem.responsavel }}</td>
         <td>R$ {{ colecaoItem.orcamento }}</td>
+        <td>{{ quantidadeModelos[i] }}</td>
     </tr>
 </table>
 

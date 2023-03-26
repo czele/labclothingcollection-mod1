@@ -16,4 +16,7 @@ export class UsuarioService {
     return this._usuarioService.post<Usuario>(`${this.url}`, usuario)
   } 
 
+  listar(): Observable<Usuario[]> {
+    return this._usuarioService.get<Usuario[]>(`${this.url}`);
+  }
 }
