@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 import { Colecao } from 'src/app/Interfaces/colecao';
+import { Modelo } from 'src/app/Interfaces/modelo';
 import { ColecaoService } from 'src/app/services/colecao.service';
 import { ModeloService } from 'src/app/services/modelo.service';
 
@@ -11,16 +13,25 @@ import { ModeloService } from 'src/app/services/modelo.service';
 export class DashboardComponent {
 
   colecaoList: Colecao[] = [];
+  modeloList: Modelo[] = [];
+  listaIdColecao: number[] = [];
+  quantidadeModelos: number[] = [];
   somaOrcamento: number = 0;
   totalColecao: number = 0;
   totalModelo: number = 0;
   mediaOrc: number = 0;
 
-  constructor(private _serviceColecao: ColecaoService, private _serviceModelo: ModeloService) {}
+  constructor(private _serviceColecao: ColecaoService, 
+    private _serviceModelo: ModeloService) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.listarColecao();
-    this.listarModelo();
+    await this.listarModelo();
+
+    this.colecaoList.forEach(colecao => this.listaIdColecao.push(colecao.id))
+    this.listaIdColecao.forEach(
+      colecaoId => {this.quantidadeModelos.push(
+        this.modeloList.filter(modelo => modelo.colecao == colecaoId).length)});
   }
 
   listarColecao() {
@@ -32,8 +43,8 @@ export class DashboardComponent {
     });
   }
 
-  listarModelo() {
-    this._serviceModelo.listar().subscribe(modelo => {this.totalModelo = modelo.length});
+  async listarModelo() {
+    this.modeloList = await firstValueFrom(this._serviceModelo.listar());
   }
 
   ordenarOrcamento() {

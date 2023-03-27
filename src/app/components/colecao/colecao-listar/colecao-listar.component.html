@@ -1,19 +1,19 @@
 <table>
     <tr>
         <th>Nome</th>
-        <th>Estação</th>
-        <th>Lançamento</th>
         <th>Responsável</th>
-        <th>Orçamento</th>
+        <th>Estação - Lançamento</th>
+        <th>Lançamento</th>
         <th>Quantidade de Modelos</th>
+        <th>Orçamento</th>
     </tr>
     <tr *ngFor="let colecaoItem of colecaoList; index as i" (click)="editarColecao(colecaoItem.id)">
         <td>{{ colecaoItem.nome }}</td>
-        <td>{{ colecaoItem.estacao }}</td>
-        <td>{{ colecaoItem.lancamento }}</td>
         <td>{{ colecaoItem.responsavel }}</td>
-        <td>R$ {{ colecaoItem.orcamento }}</td>
+        <td>{{ colecaoItem.estacao }} {{ colecaoItem.lancamento }}</td>
         <td>{{ quantidadeModelos[i] }}</td>
+        <td>R$ {{ colecaoItem.orcamento }}</td>
+
     </tr>
 </table>
 
