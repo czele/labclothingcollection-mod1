@@ -9,10 +9,9 @@ export class LoginGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      // if (localStorage.getItem("logado") === "true") {
-      //   return true
-      // } return false;
-      return true;
+      if (localStorage.getItem("logado") === "true") {
+        return true
+      } return false;
   }
   
 }
