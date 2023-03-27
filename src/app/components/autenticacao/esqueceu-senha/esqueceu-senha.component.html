@@ -1,7 +1,9 @@
 <button routerLink="/login">Voltar</button>
 
-<form class="form" [formGroup]="formEsqueceu" (ngSubmit)="onSubmit()">
+<form class="form" [formGroup]="formEsqueceu" (ngSubmit)="onSubmit()" *ngIf="!emailValidado">
     <label>E-mail:</label>
     <input formControlName="email">
     <button>Enviar Recuperação</button>
 </form>
+
+<p *ngIf="emailValidado">Um link para redefinição de senha foi enviado para o e-mail {{ emailDigitado }}</p>

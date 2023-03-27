@@ -13,24 +13,34 @@ export class EsqueceuSenhaComponent {
   
   formEsqueceu!: FormGroup;
   usuarioList: Usuario[] = [];
+  emailDigitado!: string;
+  emailValidado: boolean = false;
 
   constructor(private pegarEmail: FormBuilder,
     private _service: UsuarioService) {}
 
   ngOnInit() {
+
+    this.listarUsuario();
+
     this.formEsqueceu = this.pegarEmail.group({
-      email: ['', [Validators.required]]})
-      
-      console.log(this.usuarioList)
+      email: ['', [Validators.required, Validators.email]]});   
   }
 
   async listarUsuario() {
     this.usuarioList = await firstValueFrom(this._service.listar())
-    
+  }
+
+  mensagemCadastrado() {
+    this.emailDigitado = this.formEsqueceu.value.email;
+    this.emailValidado = true;
   }
 
   onSubmit() {
-    
+    this.usuarioList.forEach(element => {
+      if (element.email === this.formEsqueceu.value.email) {
+        this.mensagemCadastrado();
+      } else window.alert("Usuário não cadastrado. Favor realizar cadastro.")
+    });
   }
-
 }
