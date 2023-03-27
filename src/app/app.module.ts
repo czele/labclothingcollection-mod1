@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/autenticacao/login/login.component';
 import { CadastroComponent } from './components/autenticacao/cadastro/cadastro.component';
 import { EsqueceuSenhaComponent } from './components/autenticacao/esqueceu-senha/esqueceu-senha.component';
-import { EnvioEmailComponent } from './components/autenticacao/envio-email/envio-email.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { FullComponent } from './components/full/full.component';
@@ -24,7 +23,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     CadastroComponent,
     EsqueceuSenhaComponent,
-    EnvioEmailComponent,
     HomeComponent,
     MenuComponent,
     FullComponent,

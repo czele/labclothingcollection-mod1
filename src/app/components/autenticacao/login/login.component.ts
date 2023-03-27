@@ -27,9 +27,10 @@ export class LoginComponent {
   ngOnInit() {
     this.formLogin = this.fl.group({
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required, Validators.pattern("^[0-9]*$")]]
+      senha: ['', [Validators.required]]
     });
     localStorage.setItem("logado", "false");
+    this.listarUsuarios();
   }
 
   onSubmit() {
@@ -37,9 +38,11 @@ export class LoginComponent {
       if(e.email === this.formLogin.value.email && e.senha === this.formLogin.value.senha) {
           this.logado = true;
           localStorage.setItem("logado", "true");
-          window.alert("Login efetuado com sucesso");
           this.router.navigate(['/home']);
-        } else {this.naoLogado = true}
+        } else {
+          this.naoLogado = true;
+          window.alert("Dado incorreto")
+        }
     }); 
   }
 }

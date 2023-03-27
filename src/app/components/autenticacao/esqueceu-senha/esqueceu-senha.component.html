@@ -1,3 +1,7 @@
-<button routerLink="/envio-email">Confirmar</button>
 <button routerLink="/login">Voltar</button>
-<p>esqueceu-senha works!</p>
+
+<form class="form" [formGroup]="formEsqueceu" (ngSubmit)="onSubmit()">
+    <label>E-mail:</label>
+    <input formControlName="email">
+    <button>Enviar Recuperação</button>
+</form>

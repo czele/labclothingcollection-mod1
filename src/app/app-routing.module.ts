@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './components/autenticacao/cadastro/cadastro.component';
-import { EnvioEmailComponent } from './components/autenticacao/envio-email/envio-email.component';
 import { EsqueceuSenhaComponent } from './components/autenticacao/esqueceu-senha/esqueceu-senha.component';
 import { LoginComponent } from './components/autenticacao/login/login.component';
 import { ColecaoCadastrarComponent } from './components/colecao/colecao-cadastrar/colecao-cadastrar.component';
@@ -18,7 +17,6 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'cadastro', component:CadastroComponent},
   {path:'esqueceu-senha', component: EsqueceuSenhaComponent},
-  {path:'envio-email', component: EnvioEmailComponent},
   {path:'home', component: HomeComponent, canActivate: [LoginGuard],
   children: [
     {path:'dashboard', component: DashboardComponent},
