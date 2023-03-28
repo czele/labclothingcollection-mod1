@@ -1,53 +1,21 @@
-.nav-link,
-.nav-item {
-    color: #A4A4A4;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    display: flex;
-    align-items: center;
-}
-
-.flex-column {
+.d-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 51px 40px;
-    gap: 10px;
-    
-    position: relative;
-    width: 380px;
-    height: 982px;
+    gap: 40px;
+
+    position: absolute;
+    width: 332.07px;
+    height: 800px;
+    left: 0px;
+    top: 0px;
 }
 
-#logo {
-    width: 168.07px;
-    height: 32px;
-    margin-top: 51px;
-    margin-left: 49px;
+.nav {
+    gap: 25px;
 }
 
-.nav-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px 20px;
-    gap: 10px;
-
-    width: 276px;
-    height: 50px;
-
-    background: #4C68FF;
-    border-radius: 7px;
-}
-
-.navbar {
-    height: 120px;
-    margin-left: 276px
-    ;
-
-    background: #FFFFFF;
-    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.12);
+#audacesLogo {
+    margin-top: 70px;
 }

@@ -1,20 +1,19 @@
-<table>
+<table class="table table-striped table-hover table-sm">
     <tr>
         <th>Nome</th>
         <th>Responsável</th>
-        <th>Estação - Lançamento</th>
-        <th>Lançamento</th>
         <th>Quantidade de Modelos</th>
         <th>Orçamento</th>
     </tr>
+    <tbody class="table-group-divider">
     <tr *ngFor="let colecaoItem of colecaoList; index as i" (click)="editarColecao(colecaoItem.id)">
         <td>{{ colecaoItem.nome }}</td>
         <td>{{ colecaoItem.responsavel }}</td>
-        <td>{{ colecaoItem.estacao }} {{ colecaoItem.lancamento }}</td>
         <td>{{ quantidadeModelos[i] }}</td>
         <td>R$ {{ colecaoItem.orcamento }}</td>
 
-    </tr>
+    </tr>  
 </table>
 
-<button routerLink="cadastrar">Cadastrar</button>
+
+<button routerLink="cadastrar">Criar Coleção</button>

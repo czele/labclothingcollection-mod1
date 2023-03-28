@@ -17,8 +17,6 @@ export class DashboardComponent {
   listaIdColecao: number[] = [];
   quantidadeModelos: number[] = [];
   somaOrcamento: number = 0;
-  totalColecao: number = 0;
-  totalModelo: number = 0;
   mediaOrc: number = 0;
 
   constructor(private _serviceColecao: ColecaoService, 
@@ -38,7 +36,6 @@ export class DashboardComponent {
     this._serviceColecao.listar().subscribe(colecao => {
       this.colecaoList = colecao; 
       this.mediaOrc = this.mediaOrcamento(); 
-      this.totalColecao = this.somaColecao();
       return this.ordenarOrcamento()
     });
   }
@@ -49,10 +46,6 @@ export class DashboardComponent {
 
   ordenarOrcamento() {
     this.colecaoList.sort((a,b)=>(a.orcamento>b.orcamento) ? -1 : (a.orcamento<b.orcamento) ? 1 : 0);
-  }
-
-  somaColecao() {
-    return this.totalColecao = this.colecaoList.length;
   }
 
   mediaOrcamento() {

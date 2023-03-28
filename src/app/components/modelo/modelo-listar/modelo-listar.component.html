@@ -1,13 +1,11 @@
-<button routerLink="cadastrar">Cadastrar</button>
-<button routerLink="editar">Editar</button>
-
-<table>
+<table class="table table-striped table-hover table-sm">
     <tr>
         <th>ModeloId</th>
         <th>Nome</th>
         <th>Responsável</th>
         <th>Coleçao</th>
     </tr>
+    <tbody class="table-group-divider">
     <tr *ngFor="let modeloItem of modeloList" (click)="editarModelo(modeloItem.id)">
         <td>{{ modeloItem.id }}</td>
         <td>{{ modeloItem.nome }}</td>
@@ -15,3 +13,5 @@
         <td>{{ modeloItem.colecao }}</td>
     </tr>
 </table>
+
+<button routerLink="cadastrar">Criar Coleção</button>
