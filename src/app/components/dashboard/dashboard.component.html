@@ -1,18 +1,23 @@
 <p>Total Coleção: {{ colecaoList.length }}</p>
 <p>Total Modelo: {{ modeloList.length }}</p>
 <p>Média Orçamento: R$ {{ mediaOrc.toFixed(2) }}</p>
-<table>
-    <tr>
-        <th>Nome</th>
-        <th>Responsável</th>
-        <th>Modelos</th>
-        <th>Orçamento</th>
-    </tr>
-    <tr *ngFor="let colecaoItem of colecaoList.slice(0,5) index as i">
-        <td>{{ colecaoItem.nome }}</td>
-        <td>{{ colecaoItem.responsavel }}</td>
-        <td>{{ quantidadeModelos[i] }}</td>
-        <td>R$ {{ colecaoItem.orcamento }}</td>
-    </tr>
+
+<table class="table table-striped table-hover table-responsive-sm">
+    <thead>
+        <tr>
+            <th>Coleção</th>
+            <th>Responsável</th>
+            <th>Modelos</th>
+            <th>Orçamento</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider" style="height: 100px">
+        <tr *ngFor="let colecaoItem of colecaoList.slice(0,5) index as i">
+            <td>{{ colecaoItem.nome }}</td>
+            <td>{{ colecaoItem.responsavel }}</td>
+            <td>{{ quantidadeModelos[i] }}</td>
+            <td>R$ {{ colecaoItem.orcamento }}</td>
+        </tr>
+    </tbody>
 </table>
 

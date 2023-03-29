@@ -26,25 +26,23 @@ export class LoginComponent {
 
   ngOnInit() {
     this.formLogin = this.fl.group({
-      email: [''],
-      senha: ['']
-      // email: ['', [Validators.required, Validators.email]],
-      // senha: ['', [Validators.required]]
+      email: ['', [Validators.required, Validators.email]],
+      senha: ['', [Validators.required]]
     });
-    // localStorage.setItem("logado", "false");
-    // this.listarUsuarios();
+    localStorage.setItem("logado", "false");
+    this.listarUsuarios();
   }
 
    onSubmit() {
-  //   this.listaUsuarios.forEach(e => {  
-  //     if(e.email === this.formLogin.value.email && e.senha === this.formLogin.value.senha) {
-  //         this.logado = true;
-  //         localStorage.setItem("logado", "true");
-  //         this.router.navigate(['/home']);
-  //       } else {
-  //         this.naoLogado = true;
-  //         window.alert("Dado incorreto")
-  //       }
-  //   }); 
+    this.listaUsuarios.forEach(e => {  
+      if(e.email === this.formLogin.value.email && e.senha === this.formLogin.value.senha) {
+          this.logado = true;
+          localStorage.setItem("logado", "true");
+          this.router.navigate(['/home']);
+        } else {
+          this.naoLogado = true;
+          window.alert("Dado incorreto")
+        }
+    }); 
    }
 }

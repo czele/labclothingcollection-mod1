@@ -39,7 +39,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ ],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
