@@ -3,9 +3,9 @@ body {
 }
 
 .position-absolute {
-    margin-top: 50px;
+    margin-top: 3rem;
 }
 
-#text {
-    width: 350px;
+.text {
+    width: 19rem;
 }
