@@ -30,7 +30,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ColecaoListarComponent,
     ModeloCadastrarComponent,
     ModeloListarComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
