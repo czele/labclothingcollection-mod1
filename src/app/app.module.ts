@@ -16,6 +16,7 @@ import { ColecaoListarComponent } from './components/colecao/colecao-listar/cole
 import { ModeloCadastrarComponent } from './components/modelo/modelo-cadastrar/modelo-cadastrar.component';
 import { ModeloListarComponent } from './components/modelo/modelo-listar/modelo-listar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ModeloCadastrarComponent,
     ModeloListarComponent,
     DashboardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

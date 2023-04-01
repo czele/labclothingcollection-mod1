@@ -1,21 +1,9 @@
-.d-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 51px 40px;
-    gap: 40px;
+.nav-link {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
 
-    position: absolute;
-    width: 332.07px;
-    height: 800px;
-    left: 0px;
-    top: 0px;
-}
-
-.nav {
-    gap: 25px;
-}
-
-#audacesLogo {
-    margin-top: 70px;
 }
