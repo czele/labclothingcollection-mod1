@@ -13,25 +13,25 @@
       "id": 2,
       "nome": "Modelo 2",
       "tipo": "biquini",
-      "colecao": 1,
+      "colecao": 2,
       "responsavel": "Marcelo",
       "bordado": "sim",
-      "estampa": "não"
+      "estampa": "nao"
     },
     {
       "id": 3,
       "nome": "Modelo 3",
       "tipo": "bolsa",
-      "colecao": 2,
+      "colecao": 1,
       "responsavel": "Yan",
-      "bordado": "não",
+      "bordado": "nao",
       "estampa": "sim"
     },
     {
       "id": 5,
       "nome": "Modelo 5",
       "tipo": "calça",
-      "colecao": 4,
+      "colecao": 2,
       "responsavel": "Frederico",
       "bordado": "sim",
       "estampa": "sim"

@@ -15,11 +15,11 @@
             </tr>
         </thead>
         <tbody class="table-group-divider" style="height: 100px">
-            <tr *ngFor="let modeloItem of modeloList" (click)="editarModelo(modeloItem.id)">
+            <tr *ngFor="let modeloItem of modeloList index as i" (click)="editarModelo(modeloItem.id)">
                 <td>{{ modeloItem.id }}</td>
                 <td>{{ modeloItem.nome }}</td>
                 <td>{{ modeloItem.responsavel }}</td>
-                <td>{{ modeloItem.colecao }}</td>
+                <td>{{ colecaoCadaModelo[i] }}</td>
             </tr>
         </tbody>
     </table>
