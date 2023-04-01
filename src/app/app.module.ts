@@ -8,15 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/autenticacao/login/login.component';
 import { CadastroComponent } from './components/autenticacao/cadastro/cadastro.component';
 import { EsqueceuSenhaComponent } from './components/autenticacao/esqueceu-senha/esqueceu-senha.component';
-import { HomeComponent } from './components/home/home.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { FullComponent } from './components/full/full.component';
+import { HomeComponent } from './components/site-layout/home/home.component';
+import { MenuComponent } from './components/site-layout/menu/menu.component';
+import { FullComponent } from './components/site-layout/full/full.component';
 import { ColecaoCadastrarComponent } from './components/colecao/colecao-cadastrar/colecao-cadastrar.component';
 import { ColecaoListarComponent } from './components/colecao/colecao-listar/colecao-listar.component';
 import { ModeloCadastrarComponent } from './components/modelo/modelo-cadastrar/modelo-cadastrar.component';
 import { ModeloListarComponent } from './components/modelo/modelo-listar/modelo-listar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './components/site-layout/header/header.component';
 
 @NgModule({
   declarations: [

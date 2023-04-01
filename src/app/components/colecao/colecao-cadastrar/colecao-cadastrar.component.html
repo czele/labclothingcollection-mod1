@@ -1,4 +1,4 @@
-<button routerLink="/home/colecao">Voltar</button>
+<button type="button" class="btn btn-primary" routerLink="/home/colecao">Voltar</button>
 
 <form class="form" [formGroup]="formCadastrarColecao">
     <div>
@@ -26,8 +26,8 @@
         <input placeholder="Orçamento" type="number" formControlName="orcamento">
     </div>
     <div>
-        <button (click)="onSubmit()" *ngIf="!id">Criar</button>
-        <button (click)="onSubmit()" *ngIf="id">Editar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()" *ngIf="!id">Criar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()" *ngIf="id">Editar</button>
         <button *ngIf="id" (click)="excluirColecao(id)">Deletar</button>
     </div>
 </form>

@@ -6,7 +6,7 @@ import { LoginComponent } from './components/autenticacao/login/login.component'
 import { ColecaoCadastrarComponent } from './components/colecao/colecao-cadastrar/colecao-cadastrar.component';
 import { ColecaoListarComponent } from './components/colecao/colecao-listar/colecao-listar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './components/site-layout/home/home.component';
 import { ModeloCadastrarComponent } from './components/modelo/modelo-cadastrar/modelo-cadastrar.component';
 import { ModeloListarComponent } from './components/modelo/modelo-listar/modelo-listar.component';
 import { LoginGuard } from './login.guard';
