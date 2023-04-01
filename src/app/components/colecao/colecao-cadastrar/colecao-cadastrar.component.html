@@ -1,33 +1,46 @@
-<button type="button" class="btn btn-primary" routerLink="/home/colecao">Voltar</button>
+<h2 *ngIf="!id" class="p-3">Cria Coleção</h2>
+<h2 *ngIf="id" class="p-3">Editar Coleção</h2>
 
 <form class="form" [formGroup]="formCadastrarColecao">
-    <div>
-        <label>Nome:</label>
-        <input placeholder="Nome" formControlName="nome">
+    <div class="row m-4">
+        <div class="col">
+            <input type="text" class="form-control" formControlName="nome" placeholder="Nome da Coleção">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" formControlName="responsavel"
+                placeholder="Responsável pela coleção">
+        </div>
     </div>
-    <div>
-        <label>Estação:</label>
-        <input placeholder="Estação" formControlName="estacao">
+    <div class="row m-4">
+        <div class="col">
+            <input type="text" class="form-control" formControlName="estacao" placeholder="Para qual Estação?">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" formControlName="marca"
+                placeholder="Para qual marca você está criando?">
+        </div>
     </div>
-    <div>
-        <label>Lançamento:</label>
-        <input placeholder="Lançamento" formControlName="lancamento">
+    <div class="row m-4">
+        <div class="col">
+            <input type="text" class="form-control" formControlName="orcamento"
+                placeholder="Qual é o orçmanento desta coleção">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" formControlName="lancamento" placeholder="Ano de Lançamento">
+        </div>
     </div>
-    <div>
-        <label>Responsável:</label>
-        <input placeholder="Responsável" formControlName="responsavel">
+    <div class="d-flex justify-content-center m-5">
+        <img src="../../../../assets/imagem_manequim.png" alt="Imagem Manequim">
     </div>
-    <div>
-        <label>Marca:</label>
-        <input placeholder="Marca" formControlName="marca">
+
+    <div class="d-grid gap-2 d-md-block m-4">
+        <button type="button" class="btn btn-danger" *ngIf="id" (click)="excluirColecao(id)">Excluir</button>
     </div>
-    <div>
-        <label>Orçamento:</label>
-        <input placeholder="Orçamento" type="number" formControlName="orcamento">
-    </div>
-    <div>
-        <button type="button" class="btn btn-primary" (click)="onSubmit()" *ngIf="!id">Criar</button>
-        <button type="button" class="btn btn-primary" (click)="onSubmit()" *ngIf="id">Editar</button>
-        <button *ngIf="id" (click)="excluirColecao(id)">Deletar</button>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end m-4">
+        <button type="button" class="btn btn-secondary" routerLink="/home/colecao">Cancelar</button>
+        <button type="button" class="btn btn-primary" *ngIf="!id" (click)="onSubmit()">Salvar</button>
+        <button type="button" class="btn btn-primary" *ngIf="id" (click)="onSubmit()">Atualizar</button>
     </div>
 </form>
+
+    

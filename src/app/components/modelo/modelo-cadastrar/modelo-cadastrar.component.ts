@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
+import { Colecao } from 'src/app/Interfaces/colecao';
+import { ColecaoService } from 'src/app/services/colecao.service';
 import { ModeloService } from 'src/app/services/modelo.service';
 
 @Component({
@@ -11,10 +14,12 @@ import { ModeloService } from 'src/app/services/modelo.service';
 export class ModeloCadastrarComponent {
 
   formCadastrarModelo!: FormGroup;
+  colecaoList: Colecao[] = [];
   id: number = Number(this.route.snapshot.paramMap.get('id'));
 
   constructor(private formModelo: FormBuilder,
-    private _service: ModeloService,
+    private _serviceModelo: ModeloService,
+    private _serviceColecao: ColecaoService,
     private route: ActivatedRoute,
     private navegar: Router) {}
   
@@ -30,7 +35,7 @@ export class ModeloCadastrarComponent {
     })
 
     if(this.id) {
-      this._service.listarUm(this.id).subscribe(modelo =>{
+      this._serviceModelo.listarUm(this.id).subscribe(modelo =>{
         this.formCadastrarModelo.get("id")?.setValue(modelo.id);
         this.formCadastrarModelo.get("nome")?.setValue(modelo.nome);
         this.formCadastrarModelo.get("tipo")?.setValue(modelo.tipo);
@@ -40,24 +45,29 @@ export class ModeloCadastrarComponent {
         this.formCadastrarModelo.get("estampa")?.setValue(modelo.estampa);
       })
     }
+    this.listarColecao();
   }
 
   onSubmit() {
     if(this.id) {
-      this._service.editar(this.formCadastrarModelo.value).subscribe(() => this.voltar());
+      this._serviceModelo.editar(this.formCadastrarModelo.value).subscribe(() => this.voltar());
     }
     else {
-      this._service.cadastrar(this.formCadastrarModelo.value).subscribe();
+      this._serviceModelo.cadastrar(this.formCadastrarModelo.value).subscribe();
     }
   }
 
   excluirModelo(id: number) {
-    this._service.excluir(id).subscribe(item => this.voltar());
+    this._serviceModelo.excluir(id).subscribe(item => this.voltar());
   }
 
   voltar() {
     if(this.formCadastrarModelo.valid) {
       this.navegar.navigateByUrl("/home/modelo")
     }
+  }
+
+  async listarColecao() {
+    this.colecaoList = await firstValueFrom(this._serviceColecao.listar())
   }
 }

@@ -1,33 +1,72 @@
-<button type="button" class="btn btn-primary" routerLink="/home/modelo">Voltar</button>
+<h2 *ngIf="!id" class="p-3">Criar Modelo</h2>
+<h2 *ngIf="id" class="p-3">Editar Modelo</h2>
 
 <form class="form" [formGroup]="formCadastrarModelo">
-    <div>
-        <label>Nome:</label>
-        <input placeholder="Nome" formControlName="nome">
+    <div class="row m-4">
+        <div class="col">
+            <input type="text" class="form-control" formControlName="nome" placeholder="Nome da Coleção">
+        </div>
+        <div class="col">
+            <select class="form-select" formControlName="tipo">
+                <option [selected]="'selected'" disabled>Tipo do modelo</option>
+                <option value="bermuda">Bermuda</option>
+                <option value="biquini">Biquini</option>
+                <option value="bolsa">Bolsa</option>
+                <option value="bone">Boné</option>verão
+                <option value="calca">Calça</option>
+                <option value="calcados">Calçados</option>
+                <option value="camisa">Camisa</option>
+                <option value="chapeu">Chapéu</option>
+                <option value="cinto">Cinto</option>
+                <option value="saia">Saia</option>
+            </select>
+        </div>
     </div>
-    <div>
-        <label>Tipo:</label>
-        <input placeholder="Tipo" formControlName="tipo">
+    <div class="row m-4">
+        <div class="col">
+            <select class="form-select" formControlName="colecao">
+                <option [selected]="'selected'" disabled>Selecionar Coleção</option>
+                <option *ngFor="let colecao of colecaoList" [value]="colecao.id">{{ colecao.nome }}</option>
+            </select>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" formControlName="responsavel" placeholder="Responsável pelo modelo">
+        </div>
     </div>
-    <div>
-        <label>Coleção:</label>
-        <input placeholder="Coleção" formControlName="colecao">
+    <div class="row m-4">
+        <div class="col">
+            <span>Possui bordado?</span>
+            <br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="combordado" formControlName="bordado" value=true>
+                <label class="form-check-label">Sim</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="sembordado" formControlName="bordado" value=false>
+                <label class="form-check-label">Não</label>
+            </div>
+        </div>
+        <div class="col">
+            <span>Possui Estampa?</span>
+            <br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="comestampa" formControlName="estampa" value=true>
+                <label class="form-check-label">Sim</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="semestampa" formControlName="estampa" value=false>
+                <label class="form-check-label">Não</label>
+            </div>
+        </div>
     </div>
-    <div>
-        <label>Responsável:</label>
-        <input placeholder="Responsável" formControlName="responsavel">
+
+    <div class="d-grid gap-2 d-md-block m-4">
+        <button type="button" class="btn btn-danger" *ngIf="id" (click)="excluirModelo(id)">Excluir</button>
     </div>
-    <div>
-        <label>Bordado:</label>
-        <input placeholder="Bordado" formControlName="bordado">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end m-4">
+        <button type="button" class="btn btn-secondary" routerLink="/home/modelo">Cancelar</button>
+        <button type="button" class="btn btn-primary" *ngIf="!id" (click)="onSubmit()">Salvar</button>
+        <button type="button" class="btn btn-primary" *ngIf="id" (click)="onSubmit()">Atualizar</button>
     </div>
-    <div>
-        <label>Estampa:</label>
-        <input placeholder="Estampa" formControlName="estampa">
-    </div>
-    <div>
-        <button type="button" class="btn btn-primary" (click)="onSubmit()" *ngIf="!id">Cadastrar</button>
-        <button type="button" class="btn btn-primary" (click)="onSubmit()" *ngIf="id">Editar</button>
-        <button type="button" class="btn btn-primary" *ngIf="id" (click)="excluirModelo(id)">Deletar</button>
-    </div>
+
 </form>
