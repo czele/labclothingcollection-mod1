@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class CadastroComponent {
   formCadastroUsuario!: FormGroup;
 
   constructor(private formUsuario: FormBuilder,
-    private _service: UsuarioService) {}
+    private _service: UsuarioService,
+    private navegar:Router) {}
   
   ngOnInit() {
     this.formCadastroUsuario = this.formUsuario.group({
@@ -28,6 +30,9 @@ export class CadastroComponent {
   onSubmit() {
     if(this.formCadastroUsuario.valid && (this.formCadastroUsuario.value.senha === this.formCadastroUsuario.value.confirmarSenha)){
       this._service.cadastrar(this.formCadastroUsuario.value).subscribe();
+      this.navegar.navigateByUrl("/login")
+    } else {
+      window.alert("Dados incorretos")
     }
   }
 }
