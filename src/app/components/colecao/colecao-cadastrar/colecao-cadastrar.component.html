@@ -33,14 +33,17 @@
         <img src="../../../../assets/imagem_manequim.png" alt="Imagem Manequim">
     </div>
 
-    <div class="d-grid gap-2 d-md-block m-4">
-        <button type="button" class="btn btn-danger" *ngIf="id" (click)="excluirColecao(id)">Excluir</button>
-    </div>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end m-4">
-        <button type="button" class="btn btn-secondary" routerLink="/home/colecao">Cancelar</button>
-        <button type="button" class="btn btn-primary" *ngIf="!id" (click)="onSubmit()">Salvar</button>
-        <button type="button" class="btn btn-primary" *ngIf="id" (click)="onSubmit()">Atualizar</button>
+    <div class="row p-3">
+        <div class="col-sm-1"></div>
+        <button type="button" class="btn btn-danger col-sm-1" *ngIf="id" (click)="excluirColecao(id)">Excluir</button>
+        <div class="col-sm-2" *ngIf="!id"></div>
+        <div class="col-sm-6"></div>
+        <button class="btn btn-secondary col-sm-1" routerLink="/home/colecoes">Cancelar</button>
+        <div class="col-sm-1"></div>
+        <button type="button" class="btn btn-primary col-sm-1" *ngIf="!id" (click)="onSubmit()">Cadastrar</button>
+        <button type="button" class="btn btn-primary col-sm-1" *ngIf="id" (click)="onSubmit()">Atualizar</button>
     </div>
 </form>
+
 
     

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CadastroComponent } from './components/autenticacao/cadastro/cadastro.component';
+import { CadastroComponent } from './components/autenticacao/cadastro-usuario/cadastro.component';
 import { EsqueceuSenhaComponent } from './components/autenticacao/esqueceu-senha/esqueceu-senha.component';
 import { LoginComponent } from './components/autenticacao/login/login.component';
 import { ColecaoCadastrarComponent } from './components/colecao/colecao-cadastrar/colecao-cadastrar.component';

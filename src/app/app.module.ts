@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/autenticacao/login/login.component';
-import { CadastroComponent } from './components/autenticacao/cadastro/cadastro.component';
+import { CadastroComponent } from './components/autenticacao/cadastro-usuario/cadastro.component';
 import { EsqueceuSenhaComponent } from './components/autenticacao/esqueceu-senha/esqueceu-senha.component';
 import { HomeComponent } from './components/site-layout/home/home.component';
 import { MenuComponent } from './components/site-layout/menu/menu.component';
