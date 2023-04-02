@@ -41,7 +41,7 @@ export class LoginComponent {
           this.router.navigate(['/home']);
         } else {
           this.naoLogado = true;
-          window.alert("Dado incorreto")
+          window.alert("Dados incorreto")
         }
     }); 
    }

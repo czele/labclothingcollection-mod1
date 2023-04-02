@@ -4,21 +4,23 @@
     <button type="button" class="btn btn-primary" routerLink="cadastrar">Criar Coleção</button>
 </div>
 
-<table class="table table table-hover table-sm table-responsive-sm m-3 p-3" style="width: 50rem">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Responsável</th>
-            <th>Quantidade de Modelos</th>
-            <th>Orçamento</th>
-        </tr>
-    </thead>
-    <tbody class="table-group-divider" style="height: 100px">
-        <tr *ngFor="let colecaoItem of colecaoList; index as i" (click)="editarColecao(colecaoItem.id)">
-            <td>{{ colecaoItem.nome }}</td>
-            <td>{{ colecaoItem.responsavel }}</td>
-            <td>{{ quantidadeModelos[i] }}</td>
-            <td>R$ {{ colecaoItem.orcamento }}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="d-flex justify-text-center m-3 p-3">
+    <table class="table table table-hover table-sm table-responsive-sm m-3 p-3">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Responsável</th>
+                <th>Quantidade de Modelos</th>
+                <th>Orçamento</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider" style="height: 100px">
+            <tr *ngFor="let colecaoItem of colecaoList; index as i" (click)="editarColecao(colecaoItem.id)">
+                <td>{{ colecaoItem.nome }}</td>
+                <td>{{ colecaoItem.responsavel }}</td>
+                <td>{{ quantidadeModelos[i] }}</td>
+                <td>R$ {{ colecaoItem.orcamento }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

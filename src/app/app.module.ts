@@ -17,6 +17,7 @@ import { ModeloCadastrarComponent } from './components/modelo/modelo-cadastrar/m
 import { ModeloListarComponent } from './components/modelo/modelo-listar/modelo-listar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/site-layout/header/header.component';
+import { CardsComponent } from './components/site-layout/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HeaderComponent } from './components/site-layout/header/header.componen
     ModeloCadastrarComponent,
     ModeloListarComponent,
     DashboardComponent,
-    HeaderComponent
+    HeaderComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
