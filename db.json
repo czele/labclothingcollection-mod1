@@ -35,6 +35,15 @@
       "responsavel": "Frederico",
       "bordado": "sim",
       "estampa": "sim"
+    },
+    {
+      "id": 6,
+      "nome": "Modelo 4",
+      "tipo": "calca",
+      "colecao": "5",
+      "responsavel": "Ronald",
+      "bordado": "sim",
+      "estampa": "nao"
     }
   ],
   "colecoes": [
@@ -109,6 +118,5 @@
       "confirmarSenha": "123456789",
       "id": 1
     }
-   
   ]
 }
