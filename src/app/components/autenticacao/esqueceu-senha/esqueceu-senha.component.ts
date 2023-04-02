@@ -41,7 +41,6 @@ export class EsqueceuSenhaComponent {
       if (element.email === this.formEsqueceu.value.email) {
         this.mensagemCadastrado();
       } else {
-      window.alert("Usuário não cadastrado. Favor realizar cadastro.")
     }
     });
   }
