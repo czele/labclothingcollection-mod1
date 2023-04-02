@@ -1,29 +1,12 @@
 <h2 class="p-3">Dashboard</h2>
 
-<div class="row justify-content-between p-5 d-flex flex-wrap">
-    <div class="card mb-3 col p-3" style="max-width: 18rem;">
-        <h4 class="card-title">Coleções</h4>
-        <div class="card-body">
-            <h3 class="card-text">{{ colecaoList.length }}</h3>
-        </div>
-    </div>
-
-    <div class="card mb-3 col p-3" style="max-width: 18rem;">
-        <h4 class="card-title">Modelos</h4>
-        <div class="card-body">
-            <h3 class="card-text">{{ modeloList.length }}</h3>
-        </div>
-    </div>
-
-    <div class="card mb-3 col p-3" style="max-width: 18rem;">
-        <h4 class="card-title">Orçamento Médio (R$)</h4>
-        <div class="card-body">
-            <h3 class="card-text">{{ mediaOrc.toFixed(2) }}</h3>
-        </div>
-    </div>
+<div class=" justify-content-between p-4 d-flex flex-wrap">
+    <app-cards [titulo]="'Coleções'" [body]="colecaoList.length"></app-cards>
+    <app-cards [titulo]="'Modelos'" [body]="modeloList.length"></app-cards>
+    <app-cards [titulo]="'Orçamento Médio (R$)'" [body]="mediaOrc.toFixed(2)"></app-cards>
 </div>
 
-<div class="d-flex justify-text-center m-3 p-3" >
+<div class="d-flex justify-text-center m-3 p-3">
     <table class="table table-hover table-sm table-responsive-sm">
         <thead>
             <tr>
