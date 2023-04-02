@@ -117,6 +117,15 @@
       "senha": "123456789",
       "confirmarSenha": "123456789",
       "id": 1
+    },
+    {
+      "nome": "Camila",
+      "nomeEmpresa": "Camilas",
+      "cnpj": "12345678963258",
+      "email": "teste@teste.com",
+      "senha": "123456789",
+      "confirmarSenha": "123456789",
+      "id": 2
     }
   ]
 }
